@@ -9,6 +9,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,7 +24,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, TutorialMod.MOD_ID);
 
     public static final RegistryObject<Block> ZIRCON_BLOCK = registerBlock("zircon_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
     public static final RegistryObject<Block> ZIRCON_ORE = registerBlock("zircon_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
@@ -35,12 +36,24 @@ public class ModBlocks {
                     UniformInt.of(3,7)), ModCreativeModeTab.TUTORIAL_TAB);
     public static final RegistryObject<Block> NETHERRACK_ZIRCON_ORE = registerBlock("netherrack_zircon_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(6f).requiresCorrectToolForDrops(),
+                    .strength(6f).requiresCorrectToolForDrops().sound(SoundType.NETHERRACK),
                     UniformInt.of(3,7)), ModCreativeModeTab.TUTORIAL_TAB);
     public static final RegistryObject<Block> ENDSTONE_ZIRCON_ORE = registerBlock("endstone_zircon_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3,7)), ModCreativeModeTab.TUTORIAL_TAB);
+
+    // Original Blocks (for owpow mod)
+    public static final RegistryObject<Block> OWPOW_BLOCK = registerBlock("owpow_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(6.0f).requiresCorrectToolForDrops()), ModCreativeModeTab.OWPOW_TAB);
+    public static final RegistryObject<Block> OWPOW_ORE = registerBlock("owpow_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6.0f).requiresCorrectToolForDrops()), ModCreativeModeTab.OWPOW_TAB);
+    public static final RegistryObject<Block> DEEPSLATE_OWPOW_ORE = registerBlock("deepslate_owpow_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(9.0f).requiresCorrectToolForDrops()
+                    .sound(SoundType.DEEPSLATE),UniformInt.of(5,12)), ModCreativeModeTab.OWPOW_TAB);
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

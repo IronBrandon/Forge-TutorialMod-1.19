@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tutorialmod:owpow_block"
+    }
+  ],
+  "result": {
+    "item": "tutorialmod:owpow_gems",
+    "count": 9
+  }
+}

@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-
+    "tutorialmod:owpow_block",
+    "tutorialmod:owpow_ore",
+    "tutorialmod:deepslate_owpow_ore"
   ]
 }

@@ -5,6 +5,10 @@
     "tutorialmod:zircon_ore",
     "tutorialmod:deepslate_zircon_ore",
     "tutorialmod:netherrack_zircon_ore",
-    "tutorialmod:endstone_zircon_ore"
+    "tutorialmod:endstone_zircon_ore",
+
+    "tutorialmod:owpow_block",
+    "tutorialmod:owpow_ore",
+    "tutorialmod:deepslate_owpow_ore"
   ]
 }
